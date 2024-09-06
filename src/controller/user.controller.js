@@ -11,7 +11,9 @@ import {
 import { authGuard, ref } from "../common/guard/auth.guard.js";
 
 const note_usersRouter = Router();
-
+note_usersRouter.get("/", (req, res) => {
+    res.send("hello from users");
+});
 note_usersRouter.post("/register", add);
 note_usersRouter.get("/", authGuard, getAll);
 note_usersRouter.get("/:id", authGuard, get);
