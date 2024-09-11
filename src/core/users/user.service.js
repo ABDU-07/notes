@@ -14,7 +14,7 @@ export async function add(req, res) {
         const { username, email, password } = req.body;
         const { error } = createValidator.validate({
             username,
-            email,
+            email, 
             password,
         });
         if (error) {
