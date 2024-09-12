@@ -37,6 +37,7 @@ export async function add(req, res) {
         res.status(200).send({
             accessToken,
             refreshToken,
+            username: username,
         });
     } catch (err) {
         res.status(500).send({ error: err.message });
