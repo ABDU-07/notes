@@ -9,11 +9,6 @@ export const createValidator = Joi.object({
         "string.empty": "description kirgizlishi shart!",
         "string.base": "description text bolishi kerak!",
     }), 
-    user_id: Joi.number().integer().required().messages({
-        "number.empty": "user_id kirgizlishi shart!",
-        "number.base": "user_id raqam bolishi kerak!",
-        "number.integer": "user_id integer bolishi kerak!",
-    }),
 });
 
 export const updateValidator = Joi.object({
@@ -25,11 +20,6 @@ export const updateValidator = Joi.object({
         "string.empty": "description kirgizlishi shart!",
         "string.base": "description text bolishi kerak!",
     }), 
-    user_id: Joi.number().integer().messages({
-        "number.empty": "user_id kirgizlishi shart!",
-        "number.base": "user_id raqam bolishi kerak!",
-        "number.integer": "user_id integer bolishi kerak!",
-    }),
 });
 
 export const idValidator = Joi.object({

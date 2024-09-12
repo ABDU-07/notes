@@ -10,10 +10,10 @@ import { authGuard } from "../common/guard/auth.guard.js";
 
 const notesRouter = Router();
 
-notesRouter.post("/", authGuard, add);
-notesRouter.get("/", authGuard, getAll);
-notesRouter.get("/:id", authGuard, get);
-notesRouter.put("/:id", authGuard, update);
-notesRouter.delete("/:id", authGuard, deletee);
+notesRouter.post("/post", authGuard, add);
+// notesRouter.get("/", authGuard, getAll);
+notesRouter.get("/get", authGuard, get);
+notesRouter.put("/update/:id", authGuard, update);
+notesRouter.delete("/delete/:id", authGuard, deletee);
 
 export default notesRouter;

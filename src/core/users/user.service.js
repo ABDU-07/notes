@@ -54,12 +54,6 @@ export async function getAll(req, res) {
 }
 export async function get(req, res, next) {
     try {
-        const { error: errorParams } = idValidator.validate(req.params);
-        if (errorParams) {
-            return res
-                .status(400)
-                .send({ error: errorParams.details[0].message });
-        }
         const { id } = req.params;
         const result = await pool.query(
             `SELECT * FROM note_users WHERE id = $1`,

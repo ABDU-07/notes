@@ -11,6 +11,7 @@ export async function authGuard(req, res, next) {
     try {
         const result = jwt.verify(token, getConfig("JWT_ACCCES_SECRET"));
         req.user = await findUserByEmail(result.email);
+        
         next();
     } catch (err) {
         res.status(403).send("Berilgan kalit hato:" + err.message);
