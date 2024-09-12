@@ -14,7 +14,7 @@ export async function add(req, res) {
         const { username, email, password } = req.body;
         const { error } = createValidator.validate({
             username,
-            email, 
+            email,
             password,
         });
         if (error) {
@@ -125,7 +125,6 @@ export async function findUserByEmail(username) {
 export async function login(req, res) {
     try {
         const user = req.body;
-        console.log(user);
         const { error } = loginValidator.validate(user);
         if (error) {
             return res.status(400).send(error.details[0].message);
@@ -151,6 +150,7 @@ export async function login(req, res) {
         res.status(200).send({
             accessToken,
             refreshToken,
+            username: user.username,
         });
     } catch (err) {
         console.log(err);
